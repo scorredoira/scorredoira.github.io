@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Responsive Menu</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="menu.min.css" />
+		<script src="menu.min.js"></script>
+		<style>
+			* {
+			  -moz-box-sizing: border-box;
+			  -webkit-box-sizing: border-box;
+			  box-sizing: border-box; 
+			}
+			body {
+				padding:0;
+				margin:0;
+				font-family: Helvetica, Arial, sans-serif;
+				color: #333;
+			}
+			.text {
+				padding: 20px 30px;
+				line-height: 1.7em;
+			}
+			pre {
+				padding: 10px 20px !important;
+				overflow: auto;
+				border: solid 1px #ccc !important;
+			}
+			.menu {
+				margin: 30px 0;
+			}
+		</style>
+	</head>
+	<body>	
+
+
+		<div class="text">
+			<h1>Javascript Responsive Menu</h1>
+			A very simple multilevel navigation menu.
+
+			<div class="menu">
+				<ul id="menu1">
+					<li><span class="menuItem">Option 1</span></li>
+					<li><span class="menuItem">Option 2</span></li>
+					<li><span class="menuItem"><a href="http://google.com">Google</a></span></li>
+					<li>
+						<span class="menuItem">Click me &#8674;</span>
+						<ul >
+							<li><span class="menuItem">Option 1</span></li>
+							<li>
+								<span class="menuItem">Click me too! &#8674;</span>
+								<ul>
+									<li><span class="menuItem">Another option</span></li>
+									<li><span class="menuItem">Another option 2</span></li>
+									<li><span class="menuItem">Another option 3</span></li>
+								</ul>
+							</li>
+							<li><span class="menuItem">Option 3</span></li>
+							<li><span class="menuItem"><a href="#">Foo</a></span></li>
+						</ul>
+					</li>
+					<li><span class="menuItem">Option 4</span></li>
+				</ul>
+			</div>
+
+			<p>
+				<a href="https://github.com/scorredoira/responsiveMenu">Source</a>
+			</p>
+
+			<ul>
+				<li>Unlimited nested submenus</li>
+				<li>Uses HTML list for markup</li>
+				<li>Only 3.7kb minified. No dependencies.</li>
+			</ul>
+
+			<h2>How to use it</h2>
+
+			Add the script and css references:
+
+			<?prettify lang=html?>
+			<pre class='prettyprint'>&lt;script src=&quot;menu.min.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;menu.min.css&quot; /&gt;</pre>
+
+			Create the structure with lists. They can be nested to create submenus:
+
+			<?prettify lang=html?>
+			<pre class='prettyprint'>&lt;div class=&quot;menu&quot;&gt;
+	&lt;ul id=&quot;menu1&quot;&gt;
+		&lt;li&gt;&lt;span class=&quot;menuItem&quot;&gt;&lt;a href=&quot;http://google.com&quot;&gt;Google&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;
+			&lt;span class=&quot;menuItem&quot;&gt;Submenu&lt;/span&gt;
+			&lt;ul &gt;
+				&lt;li&gt;&lt;span class=&quot;menuItem&quot;&gt;Foo&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;
+					&lt;span class=&quot;menuItem&quot;&gt;Nested submenu&lt;/span&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;span class=&quot;menuItem&quot;&gt;Another option&lt;/span&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;span class=&quot;menuItem&quot;&gt;Another option 2&lt;/span&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;span class=&quot;menuItem&quot;&gt;Another option 3&lt;/span&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+
+			Then initialize it:
+
+			<?prettify lang=js?>
+			<pre class='prettyprint'>var menu = new S.menu(&quot;menu1&quot;);</pre>
+
+			To change the appearance override this styles:
+
+			<?prettify lang=css?>
+			<pre class='prettyprint'>.menu {
+	background-color: #4b4f55;
+	color: #fff;
+	border-radius: 5px;
+	margin: 20px;
+}
+.menu .submenu {
+	background-color: #4b4f55;
+}
+.menu .menuItem {
+	padding: 7px 20px;
+}
+.menu a,
+.menu a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+.menu .hamburgerPanel {
+  	padding: 10px 10px 10px 32px;
+}
+.menu.responsive .submenu {
+	background-color: #6e757f;
+}
+.menu.responsive .submenu .submenu {
+	background-color: #8E9296;
+}</pre>
+
+
+
+		</div>
+
+		<script type="text/javascript">
+			var menu = new S.menu("menu1");
+		</script>
+		<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+	</body>
+</html>
