@@ -1,0 +1,48 @@
+
+.gallery {
+}
+.gallery img {
+	height: 200px;
+	max-height: 100%;
+	max-width: 400px;
+}
+.gallery.bgLayer {
+	background-color: #000;
+	opacity: 0.9;
+	position: absolute;
+	top:0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.gallery.forePanel {
+	position: absolute;
+	top:0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	display: 0;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+}
+.gallery.forePanel img {
+	height: auto;
+	max-width: 90%;
+	margin: 10px auto;
+	display: block;
+	border: solid 5px #fff;
+}
+.gallery.forePanel.lyVisible {
+	opacity: 1;
+}
+
+/* en dispositivos muy pequeños no vale la pena mostrar la galería */
+@media (max-width: 400px) {
+	.gallery img {
+		max-width: 100%;
+		height: auto;
+	}
+}
